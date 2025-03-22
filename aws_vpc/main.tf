@@ -8,8 +8,8 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "public" {
-    count = lenght(var.public_subnet_cidr)
-    vpc_id = aws_vpc_main.id
+    count = length(var.public_subnet_cidr)
+    vpc_id = aws_vpc.main.id
     cidr_block = element(var.public_subnet_cidr, count.index)
     availability_zone = element(var.awz , count.index)
 
@@ -19,7 +19,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_subnet" "private" {
-    count = lenght(var.private_subnet_cidr)
+    count = length(var.private_subnet_cidr)
     vpc_id = aws_vpc.main.id
     cidr_block = element(var.private_subnet_cidr, count.index)
     availability_zone = element(var.awz , count.index)
@@ -51,7 +51,7 @@ resource "aws_route_table" "second_rt" {
 }
 
 resource "aws_route_table_association" "public_subnet" {
-    count = lenght(var.public_subnet_cidr)
+    count = length(var.public_subnet_cidr)
     subnet_id = element(aws_subnet.public_subnets[*].id, count.index)
     route_table_id = aws_route_table.second_rt.id
 }
