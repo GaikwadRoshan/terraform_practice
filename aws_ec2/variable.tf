@@ -11,7 +11,7 @@ variable "intance_type" {
 variable "instance_tag" {
     type = map
     default = {
-        name = helloworld
+        name = "hellow_world"
     }
 }
 
@@ -33,7 +33,7 @@ variable "vpc_id" {
 variable "sg_tags" {
     type = map 
     default = {
-        name = targetgroup
+        name = "target_group"
     }
 }
 
