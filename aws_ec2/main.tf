@@ -14,11 +14,11 @@ resource "aws_security_group" "tf_sf" {
 dynamic "ingress" {
     for_each = local.ingress_rules
     content {
-        from_port = ingress.values.from_port
-        to_port = ingress.values.to_port
-        protocol = ingree.values.protocol
-        cidr_blocks = [ingress.values.cidr_blocks]
-        description = ingress.values.description
+        from_port = ingress.value.from_port
+        to_port = ingress.value.to_port
+        protocol = ingree.value.protocol
+        cidr_blocks = [ingress.value.cidr_blocks]
+        description = ingress.value.description
     }
 }
 
@@ -26,9 +26,9 @@ dynamic "egress"{
 
     for_each = local.egress_rules
     content {
-        from_port = egress.values.from_port
-        to_port = egress.values.to_port
-        protocol = egress.values.protocol
+        from_port = egress.value.from_port
+        to_port = egress.value.to_port
+        protocol = egress.value.protocol
     }
 }
  
