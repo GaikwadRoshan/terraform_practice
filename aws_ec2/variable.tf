@@ -4,14 +4,14 @@ variable "ami_id" {
 }
 
 variable "intance_type" {
-    type = "list"
+    type = list
     default = ["t2.micro"]
 }
 
 variable "instance_tag" {
     type = map
     default = {
-        name = hello_world
+        name = helloworld
     }
 }
 
@@ -33,7 +33,7 @@ variable "vpc_id" {
 variable "sg_tags" {
     type = map 
     default = {
-        name = target_group
+        name = targetgroup
     }
 }
 
