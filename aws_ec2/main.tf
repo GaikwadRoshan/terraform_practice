@@ -12,7 +12,7 @@ resource "aws_security_group" "tf_sf" {
     vpc_id = "var.vpc_id"
 
 dynamic "ingress" {
-    for_each = locals.ingress_rules
+    for_each = local.ingress_rules
     content {
         from_port = ingress.values.from_port
         to_port = ingress.values.to_port
@@ -24,7 +24,7 @@ dynamic "ingress" {
 
 dynamic "egress"{
 
-    for_each = locals.egress_rules
+    for_each = local.egress_rules
     content {
         from_port = egress.values.from_port
         to_port = egress.values.to_port
