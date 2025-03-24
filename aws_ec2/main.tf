@@ -16,7 +16,7 @@ dynamic "ingress" {
     content {
         from_port = ingress.value.from_port
         to_port = ingress.value.to_port
-        protocol = ingree.value.protocol
+        protocol = ingress.value.protocol
         cidr_blocks = [ingress.value.cidr_blocks]
         description = ingress.value.description
     }
