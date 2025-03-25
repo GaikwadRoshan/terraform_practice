@@ -3,7 +3,7 @@ variable "ami_id" {
     default = "ami-0e35ddab05955cf57"
 }
 
-variable "intance_type" {
+variable "instance_type" {
     type = list
     default = ["t2.micro"]
 }
