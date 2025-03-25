@@ -12,7 +12,7 @@ resource "aws_default_vpc" "default" {
 resource "aws_security_group" "tf_sf" {
     name        = "var.sg_name"
     description = "var.sg_description"
-    vpc_id = "aws_default_vpc.default.id"
+    vpc_id = aws_default_vpc.default.id
 
 dynamic "ingress" {
     for_each = local.ingress_rules
