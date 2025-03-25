@@ -27,7 +27,7 @@ variable "sg_description" {
 
 variable "vpc_id" {
     type = string
-    default = "vpc-0699f4af27ecd697"
+    default = "vpc-0699f4af27ecd6975"
 }
 
 variable "sg_tags" {
