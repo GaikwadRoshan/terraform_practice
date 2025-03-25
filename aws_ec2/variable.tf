@@ -25,10 +25,7 @@ variable "sg_description" {
     default = "Security group for Terraform"
 }
 
-variable "vpc_id" {
-    type = string
-    default = "vpc-0699f4af27ecd6975"
-}
+
 
 variable "sg_tags" {
     type = map 
