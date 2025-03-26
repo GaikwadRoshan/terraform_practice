@@ -17,7 +17,7 @@ variable "instance_tag" {
 
 variable "sg_name" {
     type = string
-    default = "demo_security_group"
+    default = "practice_security_group"
 }
 
 variable "sg_description" {
