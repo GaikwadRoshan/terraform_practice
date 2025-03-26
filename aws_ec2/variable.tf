@@ -17,7 +17,7 @@ variable "instance_tag" {
 
 variable "sg_name" {
     type = string
-    default = "practice_security_group"
+    default = "aws_security_group_2"
 }
 
 variable "sg_description" {
