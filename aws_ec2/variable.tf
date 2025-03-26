@@ -5,7 +5,7 @@ variable "ami_id" {
 
 variable "instance_type" {
     type = list
-    default = ["t2.micro"]
+    default = "t2.micro"
 }
 
 variable "instance_tag" {
