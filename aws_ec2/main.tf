@@ -9,7 +9,7 @@ resource "aws_instance" "demo" {
 resource "aws_default_vpc" "default" {
 }
 
-resource "aws_security_group" "tf_sf" {
+resource "terraform_security_group" "tf_sf" {
     name        = "var.sg_name"
     description = "var.sg_description"
     vpc_id = aws_default_vpc.default.id
