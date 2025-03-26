@@ -1,7 +1,7 @@
 resource "aws_instance" "demo" {
     ami = "var.ami_id"
     instance_type = "var.instance_type"
-    security_groups = [aws_security_group_2.tf_sf.name]
+    security_groups = [aws_security_group_new.tf_sf.name]
     tags = var.instance_tag
     user_data= file("shell_script.sh")
 }
@@ -9,7 +9,7 @@ resource "aws_instance" "demo" {
 resource "aws_default_vpc" "default" {
 }
 
-resource "aws_security_group_2" "tf_sf" {
+resource "aws_security_group_new" "tf_sf" {
     name        = "var.sg_name"
     description = "var.sg_description"
     vpc_id = aws_default_vpc.default.id
