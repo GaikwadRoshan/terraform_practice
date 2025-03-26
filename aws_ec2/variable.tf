@@ -4,8 +4,8 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    type = list
-    default = ["t2.micro"]
+    type = string
+    default = "t2.micro"
 }
 
 variable "instance_tag" {
