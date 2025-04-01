@@ -3,7 +3,7 @@ resource "aws_instance" "demo" {
     instance_type = var.instance_type
     security_groups = [aws_security_group.tf_sf.name]
     tags = var.instance_tag
-    user_data= file("shell_script.sh")
+    user_data= "${file("shell_script.sh")}"
 }
 
 resource "aws_default_vpc" "default" {
