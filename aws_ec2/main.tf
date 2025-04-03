@@ -1,6 +1,7 @@
 resource "aws_instance" "demo" {
     ami = var.ami_id
     instance_type = var.instance_type
+    key_name = aws_key_pair.deployer.key_name
     security_groups = [aws_security_group.tf_sf.name]
     tags = var.instance_tag
     user_data= "${file("${path.module}/shell_script.sh")}"
