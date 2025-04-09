@@ -7,7 +7,10 @@ module "dev_infra" {
     instance_type = "t2.micro"
     ami_id = "ami-0e35ddab05955cf57"
     hash_key = "studentid"
-    sg_tags = sg_tags_dev
+    sg_tags =   {
+    Name = "sgdev"
+  }
+    
     user_data = <<-EOF
     #!/bin/bash
     echo "Starting EC2 Instance..."

@@ -1,6 +1,6 @@
 resource "aws_key_pair" "deployer" {
-    key_name = "module_automate_key"
-    public_key = file("my-key.pem.pub")
+    key_name = "${var.my_env}-module_automate_key"
+    public_key = file("./my_app_infra_module/my-key.pem.pub")
 }
 
 resource "aws_default_vpc" "default" {
