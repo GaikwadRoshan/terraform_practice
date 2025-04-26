@@ -41,7 +41,7 @@ resource "aws_instance" "my_app_server" {
     ami = var.ami_id
     instance_type = var.instance_type
     key_name = aws_key_pair.deployer.id
-    security_groups = [aws_security_groups.module_security_groups.name]
+    security_groups = [aws_security_group.module_security_group.name]
     user_data = var.user_data
     tags = {
         name = "${var.my_env}-my-app-server"
